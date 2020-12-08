@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1A9F78F7-830E-4182-A81F-1D2CBC66947C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ec134.Bd</RootNamespace>
+    <AssemblyName>ec134.Bd</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Graddo.Common.Db">
+      <HintPath>..\packages\Graddo.Common.Db.1.3.0\lib\net452\Graddo.Common.Db.dll</HintPath>
+    </Reference>
+    <Reference Include="Graddo.Util.Data.Storage, Version=1.0.2.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Graddo.Util.Data.Storage.1.0.6\lib\net452\Graddo.Util.Data.Storage.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Graddo.Util.MimeDetective, Version=1.0.2.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Graddo.Util.MimeDetective.1.3.1\lib\net452\Graddo.Util.MimeDetective.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.2.0.4\lib\net45\Microsoft.Azure.KeyVault.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.8.2\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.8.2\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.8.2\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Diagnostics.Tracing.EventSource, Version=1.1.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.28\lib\net40\Microsoft.Diagnostics.Tracing.EventSource.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=8.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.8.7.0\lib\net45\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.5.11\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
+      <HintPath>..\packages\RabbitMQ.Client.4.1.3\lib\net451\RabbitMQ.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Spatial, Version=5.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.8.2\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Acciones.cs" />
+    <Compile Include="Model\ec134Context.cs" />
+    <Compile Include="Model\CamposProductos.cs" />
+    <Compile Include="Model\Clientes.cs" />
+    <Compile Include="Model\CLIENTES_LOGALTY.cs" />
+    <Compile Include="Model\CofiguracionAccionCambioEstado.cs" />
+    <Compile Include="Model\ConfiguracionAccionDI.cs" />
+    <Compile Include="Model\ConfiguracionAccionSMTP.cs" />
+    <Compile Include="Model\ConfiguracionDasNano.cs" />
+    <Compile Include="Model\ConfiguracionDenegadas.cs" />
+    <Compile Include="Model\ConfiguracionLogalty.cs" />
+    <Compile Include="Model\Contenedores.cs" />
+    <Compile Include="Model\Controles.cs" />
+    <Compile Include="Model\DatosDasNano.cs" />
+    <Compile Include="Model\Despliegues.cs" />
+    <Compile Include="Model\DocumentacionesInternas.cs" />
+    <Compile Include="Model\Documentos.cs" />
+    <Compile Include="Model\DocumentosCUE.cs" />
+    <Compile Include="Model\DocumentosDNI.cs" />
+    <Compile Include="Model\DocumentosIBAN.cs" />
+    <Compile Include="Model\DocumentosJustificante.cs" />
+    <Compile Include="Model\DocumentosPlantillas.cs" />
+    <Compile Include="Model\DocumentosSolicitud.cs" />
+    <Compile Include="Model\ElementosVersionables.cs" />
+    <Compile Include="Model\Enum\AvisoMail.cs" />
+    <Compile Include="Model\Enum\EstadosLogalty.cs" />
+    <Compile Include="Model\Enum\TiposSolicitud.cs" />
+    <Compile Include="Model\Enum\EstadosTransacciones.cs" />
+    <Compile Include="Model\Enum\TiposControl.cs" />
+    <Compile Include="Model\Enum\TiposElementosVersionables.cs" />
+    <Compile Include="Model\Enum\EstadosSolicitud.cs" />
+    <Compile Include="Model\Enum\TiposRepositorio.cs" />
+    <Compile Include="Model\Enum\Origenes.cs" />
+    <Compile Include="Model\Enum\TiposEvento.cs" />
+    <Compile Include="Model\Enum\TiposFormularios.cs" />
+    <Compile Include="Model\Enum\TiposAccion.cs" />
+    <Compile Include="Model\Enum\TiposIdentificador.cs" />
+    <Compile Include="Model\Enum\EstadosOperaciones.cs" />
+    <Compile Include="Model\Enum\TipoValor.cs" />
+    <Compile Include="Model\Enum\ValidacionesComplejas.cs" />
+    <Compile Include="Model\EstadosLogalty.cs" />
+    <Compile Include="Model\EstadosOperaciones.cs" />
+    <Compile Include="Model\EventoAccion.cs" />
+    <Compile Include="Model\Eventos.cs" />
+    <Compile Include="Model\Extensiones.cs" />
+    <Compile Include="Model\Formularios.cs" />
+    <Compile Include="Model\GruposOpciones.cs" />
+    <Compile Include="Model\InfoOrigenes.cs" />
+    <Compile Include="Model\MimeTypes.cs" />
+    <Compile Include="Model\NumerosMagicos.cs" />
+    <Compile Include="Model\Opciones.cs" />
+    <Compile Include="Model\Operaciones.cs" />
+    <Compile Include="Model\Pasos.cs" />
+    <Compile Include="Model\Productos.cs" />
+    <Compile Include="Model\RegistrosOperaciones.cs" />
+    <Compile Include="Model\Servicios.cs" />
+    <Compile Include="Model\TipoElementoVersionable.cs" />
+    <Compile Include="Model\TiposAccesos.cs" />
+    <Compile Include="Model\TiposAcciones.cs" />
+    <Compile Include="Model\TiposArchivo.cs" />
+    <Compile Include="Model\TiposContenedores.cs" />
+    <Compile Include="Model\TiposControles.cs" />
+    <Compile Include="Model\TiposEstadosSolicitud.cs" />
+    <Compile Include="Model\TiposEventos.cs" />
+    <Compile Include="Model\TiposFormularios.cs" />
+    <Compile Include="Model\TiposIdentificador.cs" />
+    <Compile Include="Model\TiposRepositorio.cs" />
+    <Compile Include="Model\TiposServicio.cs" />
+    <Compile Include="Model\TiposValor.cs" />
+    <Compile Include="Model\LogsDasNano.cs" />
+    <Compile Include="Model\TransaccionesDasNano.cs" />
+    <Compile Include="Model\TransaccionesLogalty.cs" />
+    <Compile Include="Model\ValidacionesComplejas.cs" />
+    <Compile Include="Model\ValidacionesDasNano.cs" />
+    <Compile Include="Model\ValoresOperaciones.cs" />
+    <Compile Include="Model\VerificacionDocumentalDI.cs" />
+    <Compile Include="Model\VerificacionDocumentalDI_Ilegibles.cs" />
+    <Compile Include="Model\VerificacionDocumentalDI_Resultados.cs" />
+    <Compile Include="Model\VersionesElementos.cs" />
+    <Compile Include="Model\VersionesProductos.cs" />
+    <Compile Include="Persistence\ec134Context.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioCLIENTES_LOGALTYBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioAccionesBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioCamposProductosBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioClientesBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioCofiguracionAccionCambioEstadoBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioConfiguracionAccionDIBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioConfiguracionAccionSMTPBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioConfiguracionDasNanoBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioConfiguracionDenegadasBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioConfiguracionLogaltyBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioContenedoresBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioControlesBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioDocumentosDNIBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioDocumentosJustificanteBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioDocumentosIBANBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioDocumentosCUEBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioDocumentosSolicitudBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioDocumentosBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioLogsDasNanoBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioDatosDasNanoBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioDesplieguesBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioDocumentacionesInternasBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioDocumentosPlantillasBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioElementosVersionablesBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioEstadosLogaltyBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioEstadosOperacionesBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioEventoAccionBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioEventosBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioExtensionesBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioFormulariosBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioGruposOpcionesBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioInfoOrigenesBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioMimeTypesBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioNumerosMagicosBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioOpcionesBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioOperacionesBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioPasosBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioProductosBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioRegistrosOperacionesBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorios.Base.cs">
+      <DependentUpon>IRepositorios.Base.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioServiciosBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioTipoElementoVersionableBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioTiposAccionesBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioTiposArchivoBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioTiposContenedoresBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioTiposControlesBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioTiposEventosBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioTiposFormulariosBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioTiposIdentificadorBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioTiposRepositorioBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioTiposServicioBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioTiposValorBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioTransaccionesDasNanoBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioTransaccionesLogaltyBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioValidacionesComplejasBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioValidacionesDasNanoBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioValoresOperacionesBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioVerificacionDocumentalDIBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioVerificacionDocumentalDI_IlegiblesBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioVerificacionDocumentalDI_ResultadosBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioVersionesElementosBase.cs" />
+    <Compile Include="Repositorios\Base\Interfaces\IRepositorioVersionesProductosBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioCLIENTES_LOGALTYBasea.cs" />
+    <Compile Include="Repositorios\Base\RepositorioAccionesBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioCamposProductosBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioClientesBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioCofiguracionAccionCambioEstadoBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioConfiguracionAccionDIBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioConfiguracionAccionSMTPBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioConfiguracionDasNanoBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioConfiguracionDenegadasBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioConfiguracionLogaltyBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioContenedoresBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioControlesBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioDocumentosIBANEBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioDocumentosJustificanteBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioDocumentosDNIBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioDocumentosCUEBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioDocumentosSolicitudBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioDocumentosBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioLogsDasNanoBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioDatosDasNanoBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioDesplieguesBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioDocumentacionesInternasBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioDocumentosPlantillasBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioElementosVersionablesBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioEstadosLogaltyBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioEstadosOperacionesBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioEventoAccionBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioEventosBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioExtensionesBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioFormulariosBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioGruposOpcionesBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioInfoOrigenesBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioMimeTypesBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioNumerosMagicosBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioOpcionesBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioOperacionesBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioPasosBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioProductosBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioRegistrosOperacionesBase.cs" />
+    <Compile Include="Repositorios\Base\Repositorios.Base.cs">
+      <DependentUpon>Repositorios.Base.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Repositorios\Base\RepositorioServiciosBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioTipoElementoVersionableBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioTiposAccionesBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioTiposArchivoBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioTiposContenedoresBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioTiposControlesBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioTiposEventosBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioTiposFormulariosBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioTiposIdentificadorBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioTiposRepositorioBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioTiposServicioBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioTiposValorBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioTransaccionesDasNanoBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioTransaccionesLogaltyBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioValidacionesComplejasBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioValidacionesDasNanoBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioValoresOperacionesBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioVerificacionDocumentalDIBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioVerificacionDocumentalDI_IlegiblesBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioVerificacionDocumentalDI_ResultadosBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioVersionesElementosBase.cs" />
+    <Compile Include="Repositorios\Base\RepositorioVersionesProductosBase.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioCLIENTES_LOGALTY.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioAcciones.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioCamposProductos.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioClientes.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioCofiguracionAccionCambioEstado.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioConfiguracionAccionDI.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioConfiguracionAccionSMTP.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioConfiguracionDasNano.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioConfiguracionDenegadas.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioConfiguracionLogalty.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioContenedores.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioControles.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioDocumentosDNI.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioDocumentosJustificante.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioDocumentosIBAN.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioDocumentosCUE.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioDocumentosSolicitud.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioDocumentos.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioLogsDasNano.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioDatosDasNano.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioDespliegues.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioDocumentacionesInternas.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioDocumentosPlantillas.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioElementosVersionables.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioEstadosLogalty.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioEstadosOperaciones.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioEventoAccion.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioEventos.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioExtensiones.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioFormularios.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioGruposOpciones.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioInfoOrigenes.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioMimeTypes.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioNumerosMagicos.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioOpciones.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioOperaciones.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioPasos.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioProductos.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioRegistrosOperaciones.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorios.cs">
+      <DependentUpon>IRepositorios.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Repositorios\Interfaces\IRepositorioServicios.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioTipoElementoVersionable.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioTiposAcciones.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioTiposArchivo.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioTiposContenedores.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioTiposControles.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioTiposEventos.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioTiposFormularios.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioTiposIdentificador.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioTiposRepositorio.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioTiposServicio.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioTiposValor.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioTransaccionesDasNano.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioTransaccionesLogalty.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioValidacionesComplejas.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioValidacionesDasNano.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioValoresOperaciones.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioVerificacionDocumentalDI.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioVerificacionDocumentalDI_Ilegibles.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioVerificacionDocumentalDI_Resultados.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioVersionesElementos.cs" />
+    <Compile Include="Repositorios\Interfaces\IRepositorioVersionesProductos.cs" />
+    <Compile Include="Repositorios\RepositorioCLIENTES_LOGALTY.cs" />
+    <Compile Include="Repositorios\RepositorioAcciones.cs" />
+    <Compile Include="Repositorios\RepositorioCamposProductos.cs" />
+    <Compile Include="Repositorios\RepositorioClientes.cs" />
+    <Compile Include="Repositorios\RepositorioCofiguracionAccionCambioEstado.cs" />
+    <Compile Include="Repositorios\RepositorioConfiguracionAccionDI.cs" />
+    <Compile Include="Repositorios\RepositorioConfiguracionAccionSMTP.cs" />
+    <Compile Include="Repositorios\RepositorioConfiguracionDasNano.cs" />
+    <Compile Include="Repositorios\RepositorioConfiguracionDenegadas.cs" />
+    <Compile Include="Repositorios\RepositorioConfiguracionLogalty.cs" />
+    <Compile Include="Repositorios\RepositorioContenedores.cs" />
+    <Compile Include="Repositorios\RepositorioControles.cs" />
+    <Compile Include="Repositorios\RepositorioDocumentosIBAN.cs" />
+    <Compile Include="Repositorios\RepositorioDocumentosDNI.cs" />
+    <Compile Include="Repositorios\RepositorioDocumentosJustificante.cs" />
+    <Compile Include="Repositorios\RepositorioDocumentosCUE.cs" />
+    <Compile Include="Repositorios\RepositorioDocumentosSolicitud.cs" />
+    <Compile Include="Repositorios\RepositorioDocumentos.cs" />
+    <Compile Include="Repositorios\RepositorioLogsDasNano.cs" />
+    <Compile Include="Repositorios\RepositorioDatosDasNano.cs" />
+    <Compile Include="Repositorios\RepositorioDespliegues.cs" />
+    <Compile Include="Repositorios\RepositorioDocumentacionesInternas.cs" />
+    <Compile Include="Repositorios\RepositorioDocumentosPlantillas.cs" />
+    <Compile Include="Repositorios\RepositorioElementosVersionables.cs" />
+    <Compile Include="Repositorios\RepositorioEstadosLogalty.cs" />
+    <Compile Include="Repositorios\RepositorioEstadosOperaciones.cs" />
+    <Compile Include="Repositorios\RepositorioEventoAccion.cs" />
+    <Compile Include="Repositorios\RepositorioEventos.cs" />
+    <Compile Include="Repositorios\RepositorioExtensiones.cs" />
+    <Compile Include="Repositorios\RepositorioFormularios.cs" />
+    <Compile Include="Repositorios\RepositorioGruposOpciones.cs" />
+    <Compile Include="Repositorios\RepositorioInfoOrigenes.cs" />
+    <Compile Include="Repositorios\RepositorioMimeTypes.cs" />
+    <Compile Include="Repositorios\RepositorioNumerosMagicos.cs" />
+    <Compile Include="Repositorios\RepositorioOpciones.cs" />
+    <Compile Include="Repositorios\RepositorioOperaciones.cs" />
+    <Compile Include="Repositorios\RepositorioPasos.cs" />
+    <Compile Include="Repositorios\RepositorioProductos.cs" />
+    <Compile Include="Repositorios\RepositorioRegistrosOperaciones.cs" />
+    <Compile Include="Repositorios\Repositorios.cs">
+      <DependentUpon>Repositorios.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Repositorios\RepositorioServicios.cs" />
+    <Compile Include="Repositorios\RepositorioTipoElementoVersionable.cs" />
+    <Compile Include="Repositorios\RepositorioTiposAcciones.cs" />
+    <Compile Include="Repositorios\RepositorioTiposArchivo.cs" />
+    <Compile Include="Repositorios\RepositorioTiposContenedores.cs" />
+    <Compile Include="Repositorios\RepositorioTiposControles.cs" />
+    <Compile Include="Repositorios\RepositorioTiposEventos.cs" />
+    <Compile Include="Repositorios\RepositorioTiposFormularios.cs" />
+    <Compile Include="Repositorios\RepositorioTiposIdentificador.cs" />
+    <Compile Include="Repositorios\RepositorioTiposRepositorio.cs" />
+    <Compile Include="Repositorios\RepositorioTiposServicio.cs" />
+    <Compile Include="Repositorios\RepositorioTiposValor.cs" />
+    <Compile Include="Repositorios\RepositorioTransaccionesDasNano.cs" />
+    <Compile Include="Repositorios\RepositorioTransaccionesLogalty.cs" />
+    <Compile Include="Repositorios\RepositorioValidacionesComplejas.cs" />
+    <Compile Include="Repositorios\RepositorioValidacionesDasNano.cs" />
+    <Compile Include="Repositorios\RepositorioValoresOperaciones.cs" />
+    <Compile Include="Repositorios\RepositorioVerificacionDocumentalDI.cs" />
+    <Compile Include="Repositorios\RepositorioVerificacionDocumentalDI_Ilegibles.cs" />
+    <Compile Include="Repositorios\RepositorioVerificacionDocumentalDI_Resultados.cs" />
+    <Compile Include="Repositorios\RepositorioVersionesElementos.cs" />
+    <Compile Include="Repositorios\RepositorioVersionesProductos.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Repositorios\Base\Interfaces\IRepositorios.Base.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>IRepositorios.Base.cs</LastGenOutput>
+    </Content>
+    <Content Include="Repositorios\Base\Repositorios.Base.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Repositorios.Base.cs</LastGenOutput>
+    </Content>
+    <Content Include="Repositorios\Interfaces\IRepositorios.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>IRepositorios.cs</LastGenOutput>
+    </Content>
+    <Content Include="Repositorios\Repositorios.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Repositorios.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

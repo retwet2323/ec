@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ec134.Common.Db</name>
+    </assembly>
+    <members>
+        <member name="T:ec134.Common.Db.EFRepository">
+            <summary>
+            Clase de EFRepository, que contiene las funcionalidades básicas para el uso de una Base de Datos
+            </summary>
+        </member>
+        <member name="M:ec134.Common.Db.EFRepository.#ctor(System.Data.Entity.DbContext)">
+            <summary>
+            Constructor de la clase
+            </summary>
+            <param name="dbContext">Instancia del contexto de la clase</param>
+        </member>
+        <member name="M:ec134.Common.Db.EFRepository.All``1(System.Linq.Expressions.Expression{System.Func{``0,System.Int32}},System.String[])">
+            <summary>
+            Obtienen todos los datos
+            </summary>
+            <typeparam name="T">Clase tipada</typeparam>
+            <param name="orderby">Expresion de ordenación LinQ</param>
+            <param name="includes">Array con el nombre de las Navigation Properties a rellenar</param>
+            <returns>IQueryable con los datos pedidos</returns>
+        </member>
+        <member name="M:ec134.Common.Db.EFRepository.All``1(System.String[])">
+            <summary>
+            Obtienen todos los datos
+            </summary>
+            <typeparam name="T">Clase tipada</typeparam>
+            <param name="orderby">Expresion de ordenación LinQ</param>
+            <param name="includes">Array con el nombre de las Navigation Properties a rellenar</param>
+            <returns>IQueryable con los datos pedidos</returns>
+        </member>
+        <member name="M:ec134.Common.Db.EFRepository.All``1(System.Linq.Expressions.Expression{System.Func{``0,System.String}},System.String[])">
+            <summary>
+            Obtienen todos los datos
+            </summary>
+            <typeparam name="T">Clase tipada</typeparam>
+            <param name="orderby">Expresion de ordenación LinQ</param>
+            <param name="includes">Array con el nombre de las Navigation Properties a rellenar</param>
+            <returns>IQueryable con los datos pedidos</returns>
+        </member>
+        <member name="M:ec134.Common.Db.EFRepository.Find``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.String[])">
+            <summary>
+            Obtiene un dato
+            </summary>
+            <typeparam name="T">Clase tipada</typeparam>
+            <param name="predicate">Expresión con el filtro a realizar para encontrar el dato</param>
+            <param name="includes">Array con el nombre de las Navigation Properties a rellenar</param>
+            <returns>T</returns>
+        </member>
+        <member name="M:ec134.Common.Db.EFRepository.FindAsync``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.String[])">
+            <summary>
+            Obtiene un dato asincronamente
+            </summary>
+            <typeparam name="T">Clase tipada</typeparam>
+            <param name="predicate">Expresión con el filtro a realizar para encontrar el dato</param>
+            <param name="includes">Array con el nombre de las Navigation Properties a rellenar</param>
+            <returns>T</returns>
+        </member>
+        <member name="M:ec134.Common.Db.EFRepository.Filter``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.String[])">
+            <summary>
+            Obtiene una lista de datos filtrada
+            </summary>
+            <typeparam name="T">Clase tipada</typeparam>
+            <param name="predicate">Expresión con el filtro a realizar para encontrar el dato</param>
+            <param name="includes">Array con el nombre de las Navigation Properties a rellenar</param>
+            <returns>IQueryable con los datos pedidos</returns>
+        </member>
+        <member name="M:ec134.Common.Db.EFRepository.Filter``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,System.Int32}},System.Int32@,System.Int32,System.Int32,System.String[])">
+            <summary>
+            Obtiene un lista de datos filtrada y paginada
+            </summary>
+            <typeparam name="T">Clase tipada</typeparam>
+            <param name="predicate">Expresión con el filtro a realizar para encontrar el dato</param>
+            <param name="orderby">Expresion de ordenación LinQ</param>
+            <param name="total">Número total de datos</param>
+            <param name="index">Posición desde la que se quiere emepazar a traer datos</param>
+            <param name="size">Tamaño de página</param>
+            <param name="includes">Array con el nombre de las Navigation Properties a rellenar</param>
+            <returns>IQueryable con los datos pedidos</returns>
+        </member>
+        <member name="M:ec134.Common.Db.EFRepository.Create``1(``0)">
+            <summary>
+            Inserta en BBDD un dato
+            </summary>
+            <typeparam name="T">Clase tipada</typeparam>
+            <param name="tObject">Objeto que se quiere insertar en BBDD</param>
+            <returns>T</returns>
+        </member>
+        <member name="M:ec134.Common.Db.EFRepository.CreateAsync``1(``0)">
+            <summary>
+            Inserta en BBDD un dato asincronamente
+            </summary>
+            <typeparam name="T">Clase tipada</typeparam>
+            <param name="tObject">Objeto que se quiere insertar en BBDD</param>
+            <returns>T</returns>
+        </member>
+        <member name="M:ec134.Common.Db.EFRepository.Create``1(System.Collections.Generic.List{``0})">
+            <summary>
+            Inserta en BBDD una lista de datos
+            </summary>
+            <typeparam name="T">Clase tipada</typeparam>
+            <param name="tObject">Listado de objetos que se quieren insertar en BBDD</param>
+            <returns>Lista de los objectos creados</returns>
+        </member>
+        <member name="M:ec134.Common.Db.EFRepository.CreateAsync``1(System.Collections.Generic.List{``0})">
+            <summary>
+            Inserta en BBDD una lista de datos asincronamente
+            </summary>
+            <typeparam name="T">Clase tipada</typeparam>
+            <param name="tObject">Listado de objetos que se quieren insertar en BBDD</param>
+            <returns>Lista de los objectos creados</returns>
+        </member>
+        <member name="M:ec134.Common.Db.EFRepository.Delete``1(``0)">
+            <summary>
+            Elimina de BBDD un dato
+            </summary>
+            <typeparam name="T">Clase tipada</typeparam>
+            <param name="tObject">Objeto que se quiere eliminar de BBDD</param>
+            <returns>int</returns>
+        </member>
+        <member name="M:ec134.Common.Db.EFRepository.DeleteAsync``1(``0)">
+            <summary>
+            Elimina de BBDD un dato asincronamente
+            </summary>
+            <typeparam name="T">Clase tipada</typeparam>
+            <param name="tObject">Objeto que se quiere eliminar de BBDD</param>
+            <returns>int</returns>
+        </member>
+        <member name="M:ec134.Common.Db.EFRepository.Update``1(``0)">
+            <summary>
+            Modifica un dato en la BBDD
+            </summary>
+            <typeparam name="T">Clase tipada</typeparam>
+            <param name="tObject">Objeto que se quiere modificar en BBDD</param>
+            <returns>int</returns>
+        </member>
+        <member name="M:ec134.Common.Db.EFRepository.UpdateAsync``1(``0)">
+            <summary>
+            Modifica un dato en la BBDD
+            </summary>
+            <typeparam name="T">Clase tipada</typeparam>
+            <param name="tObject">Objeto que se quiere modificar en BBDD</param>
+            <returns>int</returns>
+        </member>
+        <member name="M:ec134.Common.Db.EFRepository.Delete``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            Elimina datos de la BBDD
+            </summary>
+            <typeparam name="T">Clase tipada</typeparam>
+            <param name="predicate">Expresión con el filtro a realizar para elimar los datos</param>
+            <returns>int</returns>
+        </member>
+        <member name="M:ec134.Common.Db.EFRepository.DeleteAsync``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            Elimina datos de la BBDD asincronamente
+            </summary>
+            <typeparam name="T">Clase tipada</typeparam>
+            <param name="predicate">Expresión con el filtro a realizar para elimar los datos</param>
+            <returns>int</returns>
+        </member>
+        <member name="M:ec134.Common.Db.EFRepository.SaveChanges">
+            <summary>
+            Hace un commit en la base de datos 
+            </summary>
+            <returns>Número de filas moficadas</returns>
+        </member>
+        <member name="M:ec134.Common.Db.EFRepository.SaveChangesAsync">
+            <summary>
+            Hace un commit en la base de datos asincronamente
+            </summary>
+            <returns>Número de filas moficadas</returns>
+        </member>
+        <member name="M:ec134.Common.Db.EFRepository.Dispose">
+            <summary>
+            Libera el recurso
+            </summary>
+        </member>
+        <member name="M:ec134.Common.Db.EFRepository.Dispose(System.Boolean)">
+            <summary>
+            Libera el recurso
+            </summary>
+        </member>
+    </members>
+</doc>
